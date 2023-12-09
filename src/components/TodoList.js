@@ -7,6 +7,7 @@ function TodoList() {
     if (!todo.text || /^\s*$/.test(todo.text)) {
       return;
     }
+
     const newTodos = [todo, ...todos];
 
     setTodos(newTodos);
@@ -26,10 +27,11 @@ function TodoList() {
     });
     setTodos(updatedTodos);
   };
-
+  const deleteAllitems = () => {
+    setTodos([]);
+  };
   return (
     <div className="background">
-     
       <div className="flex-justify">
         <div className="flex-column card">
           <TodoForm onSubmit={addTodo} />
@@ -42,9 +44,12 @@ function TodoList() {
 
           <div className="flex-between mt-3">
             <span className="pending">
-              You have <span  className="text-success  h3">{todos.length} </span>pending tasks
+              You have <span className="text-success  h3">{todos.length} </span>
+              pending tasks
             </span>
-            <button className="  btn btn-primary">clear all</button>
+            <button className="  btn btn-primary" onClick={deleteAllitems}>
+              clear all
+            </button>
           </div>
         </div>
       </div>
