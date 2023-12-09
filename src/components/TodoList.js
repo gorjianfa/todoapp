@@ -34,6 +34,7 @@ function TodoList() {
     <div className="background">
       <div className="flex-justify">
         <div className="flex-column card">
+          <h3 className="fs-2 d-flex justify-content-center">APP Todo</h3>
           <TodoForm onSubmit={addTodo} />
 
           <Todo
