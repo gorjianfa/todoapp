@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import addImage from "../image/plus.svg";
 
 function TodoForm(props) {
   const [input, setInput] = useState("");
@@ -18,16 +19,18 @@ function TodoForm(props) {
 
   return (
     <div className="">
-      <form className="flex" onSubmit={handleSubmit}>
+      <form className="flex mb-3" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="add todo"
           value={input}
           name="text"
-          className="input"
+          className="input border border-info"
           onChange={handleChange}
         />
-        <button className=" btn btn-info ">add</button>
+        <button className=" btn btn-info ">
+          <img src={addImage} className=""/>
+        </button>
       </form>
     </div>
   );

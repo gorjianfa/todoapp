@@ -28,21 +28,24 @@ function TodoList() {
   };
 
   return (
-    <div className="flex-justify">
-      <div className="flex-column">
-        <TodoForm onSubmit={addTodo} />
+    <div className="background">
+     
+      <div className="flex-justify">
+        <div className="flex-column card">
+          <TodoForm onSubmit={addTodo} />
 
-        <Todo
-          todos={todos}
-          completeTodo={completeTodo}
-          removeTodo={removeTodo}
-        />
+          <Todo
+            todos={todos}
+            completeTodo={completeTodo}
+            removeTodo={removeTodo}
+          />
 
-        <div className="flex-between">
-          <span id="total-tasks" className="pending">
-            You have <span>{todos.length} pending tasks</span>
-          </span>
-          <button className="  btn btn-success">clear all</button>
+          <div className="flex-between mt-3">
+            <span className="pending">
+              You have <span  className="text-success  h3">{todos.length} </span>pending tasks
+            </span>
+            <button className="  btn btn-primary">clear all</button>
+          </div>
         </div>
       </div>
     </div>
