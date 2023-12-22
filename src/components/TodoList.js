@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
-import DeleteConfirmation from "./DeleteConfirmation";
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -32,39 +31,33 @@ function TodoList() {
   const deleteAllitems = () => {
     setTodos([]);
   };
-  return (<div className="height">
+  return (
+    <div className="height">
+      <div className="background">
+        <div className="flex-justify">
+          <div className="flex-column card">
+            <h3 className="fs-2 d-flex justify-content-center">APP Todo</h3>
+            <TodoForm onSubmit={addTodo} />
 
+            <Todo
+              todos={todos}
+              completeTodo={completeTodo}
+              removeTodo={removeTodo}
+            />
 
-
-
-    <div className="background">
-      <div className="flex-justify">
-        <div className="flex-column card">
-          <h3 className="fs-2 d-flex justify-content-center">APP Todo</h3>
-          <TodoForm onSubmit={addTodo} />
-
-          <Todo
-            todos={todos}
-            completeTodo={completeTodo}
-            removeTodo={removeTodo}
-          />
-
-          <div className="flex-between mt-3">
-            <span className="pending">
-              You have <span className="text-success  h3">{todos.length} </span>
-              pending tasks
-            </span>
-            <button className="  btn btn-primary" onClick={deleteAllitems}>
-              clear all
-            </button>
+            <div className="flex-between mt-3">
+              <span className="pending">
+                You have{" "}
+                <span className="text-success  h3">{todos.length} </span>
+                pending tasks
+              </span>
+              <button className="  btn btn-primary" onClick={deleteAllitems}>
+                clear all
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    
-    <DeleteConfirmation></DeleteConfirmation>
-    
-    
     </div>
   );
 }

@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import trashImg from "../image/trash.svg";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-function Todo({ todos, completeTodo, removeTodo,args }) {
+function Todo({ todos, completeTodo, removeTodo, args }) {
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
-
-  const [edit, setEdit] = useState({
-    id: null,
-    value: "",
-  });
 
   return todos.map((todo, index) => (
     <div className="">
@@ -23,11 +18,11 @@ function Todo({ todos, completeTodo, removeTodo,args }) {
         </ul>
         <div>
           <button className=" btn-danger btn mt-1" onClick={toggle}>
-            <img src={trashImg} />
+            <img src={trashImg} alt="" />
           </button>
 
           <Modal isOpen={modal} toggle={toggle} {...args}>
-            <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+            <ModalHeader toggle={toggle}>remove item</ModalHeader>
             <ModalBody>are you sure to remove your item?</ModalBody>
             <ModalFooter>
               <Button color="danger" onClick={() => removeTodo(todo.id)}>
