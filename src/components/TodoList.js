@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
+import DeleteConfirmation from "./DeleteConfirmation";
+
 function TodoList() {
   const [todos, setTodos] = useState([]);
   const addTodo = (todo) => {
@@ -30,7 +32,11 @@ function TodoList() {
   const deleteAllitems = () => {
     setTodos([]);
   };
-  return (
+  return (<div className="height">
+
+
+
+
     <div className="background">
       <div className="flex-justify">
         <div className="flex-column card">
@@ -54,6 +60,11 @@ function TodoList() {
           </div>
         </div>
       </div>
+    </div>
+    
+    <DeleteConfirmation></DeleteConfirmation>
+    
+    
     </div>
   );
 }

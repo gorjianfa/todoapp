@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import addImage from "../image/plus.svg";
+import toast, { Toaster } from "react-hot-toast";
 
 function TodoForm(props) {
   const [input, setInput] = useState("");
+  const notify = () => toast("Adding the character was successful");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,8 +30,9 @@ function TodoForm(props) {
           className="input border border-info"
           onChange={handleChange}
         />
-        <button className=" btn btn-info ">
-          <img src={addImage} className=""/>
+        <button onClick={notify} className=" btn btn-info ">
+          <Toaster position="top-left" reverseOrder={false} />
+          <img src={addImage} className="" alt="" />
         </button>
       </form>
     </div>
