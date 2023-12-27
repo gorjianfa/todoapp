@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import addImage from "../image/plus.svg";
+import addImage from "../assets/image/plus.svg";
 import toast, { Toaster } from "react-hot-toast";
 
 function TodoForm(props) {

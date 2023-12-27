@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import trashImg from "../image/trash.svg";
+import trashImg from "../assets/image/trash.svg";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 function Todo({ todos, completeTodo, removeTodo, args }) {
   const [modal, setModal] = useState(false);
