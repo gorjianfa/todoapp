@@ -1,6 +1,8 @@
-import { useForm } from "react-hook-form";
+ 
+ 
+import React from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { Label, FormGroup,Input,Form  } from "reactstrap";
+import { Label, FormGroup,Input } from "reactstrap";
 import PhoneInput from 'react-phone-input-2'
 import { useState } from "react";
 const Information =()=>{
@@ -8,13 +10,14 @@ const Information =()=>{
     const notify = () => toast("The information was successfully registered");
     const [value, setValue] = useState()
     return(
-       <div >
-        <h1 className="text-danger d-flex justify-content-center">
+       <div className="background">
+        <h1 className="text-secondary d-flex justify-content-center p-3">
        information
         </h1>
         <div className=" d-flex justify-content-center">
-       <div className="card"> 
-       <FormGroup className="">
+       <div className="card "> 
+       <div className="row">    
+         <FormGroup className="col">
     <Label for="examplePassword">
       name   :
     </Label>
@@ -25,7 +28,7 @@ const Information =()=>{
       type="text"
     />
   </FormGroup>
-  <FormGroup className="">
+  <FormGroup className="col">
     <Label for="exampletext">
       Lastname   :
     </Label>
@@ -36,7 +39,9 @@ const Information =()=>{
       type="text"
     />
   </FormGroup>
-  <FormGroup className="">
+  </div>
+ <div className="row">
+  <FormGroup className="col">
     <Label for="exampleNumber">
        National Code   :
     </Label>
@@ -48,7 +53,7 @@ const Information =()=>{
       type="number"
     />
   </FormGroup>
-  <FormGroup className="">
+  <FormGroup className="col">
     <Label for="exampleDate">
        Birth Date  :
     </Label>
@@ -59,7 +64,32 @@ const Information =()=>{
       type="date"
     />
   </FormGroup>
-  <FormGroup className="">
+  </div>
+  <div className="row justify-content-center">
+  <FormGroup className="col m-3">
+    <Label for="exampleEmail">
+      Email  :
+    </Label>
+    <Input
+      id="exampleEmail"
+      name="email"
+      placeholder="with a placeholder"
+      type="email"
+    />
+  </FormGroup>
+  <FormGroup className="col">
+    <Label for="exampleSelect">
+      
+    </Label>
+    <PhoneInput className=""
+   country="ir"
+   value={value}
+   onChange={setValue}
+/>
+  </FormGroup>
+  </div>
+  <div className="row">
+  <FormGroup className="col">
     <Label for="exampleSelect">
      Gender   :
     </Label>
@@ -77,28 +107,10 @@ const Information =()=>{
     
     </Input>
   </FormGroup>
-  <FormGroup className="">
-    <Label for="exampleEmail">
-      Email  :
-    </Label>
-    <Input
-      id="exampleEmail"
-      name="email"
-      placeholder="with a placeholder"
-      type="email"
-    />
-  </FormGroup>
-  <FormGroup>
-    <Label for="exampleSelect">
-      
-    </Label>
-    <PhoneInput className=""
-   country="ir"
-   value={value}
-   onChange={setValue}
-/>
-  </FormGroup>
-      <FormGroup className="">
+
+  
+
+      <FormGroup className="col">
     <Label for="exampleSelect">
       City  :
     </Label>
@@ -133,7 +145,7 @@ const Information =()=>{
       </option>
     </Input>
   </FormGroup>
-  <FormGroup  className="">
+  <FormGroup  className="col">
     <Label for="examplePassword">
       Password   :
     </Label>
@@ -143,9 +155,9 @@ const Information =()=>{
       placeholder="password placeholder"
       type="password"
     />
-  </FormGroup>
+  </FormGroup></div>
  
-  <button  className="" onClick={notify}>Submit  <Toaster position="top-right" reverseOrder={false} />
+  <button  className="btn btn-outline-secondary" onClick={notify}>Submit  <Toaster position="top-left" reverseOrder={false} />
   </button> 
   
  

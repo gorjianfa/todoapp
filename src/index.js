@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 
-import reportWebVitals from "./reportWebVitals";
+
 import "bootstrap/dist/css/bootstrap.css";
 import Home from "./components/home";
 import About from "./components/about";
@@ -17,11 +17,11 @@ root.render(
  <Router>
   <Routes>
     <Route path="/home" element={<Home />} />
-    <Route path="/about" element={<About />} />
+
     <Route path="/" element={<App />} />
     <Route path="/information" element={<Information />} />
      <Route path='*' element={<Error />}/></Routes>
-   
+     <Route path="/about" element={<About />} />
  </Router>
   
   </React.StrictMode>
