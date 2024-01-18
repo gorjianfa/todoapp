@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import addImage from "../assets/image/plus.svg";
-import toast, { Toaster } from "react-hot-toast";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function TodoForm(props) {
   const [input, setInput] = useState("");
@@ -30,10 +31,13 @@ function TodoForm(props) {
           className="input border border-info"
           onChange={handleChange}
         />
+        <div>
         <button onClick={notify} className=" btn btn-info ">
-          <Toaster position="top-left" reverseOrder={false} />
+       
           <img src={addImage} className="" alt="" />
-        </button>
+        </button> <ToastContainer  position="top-left"/>
+        </div>
+       
       </form>
     </div>
   );

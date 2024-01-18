@@ -1,7 +1,8 @@
  
  
 import React from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Label, FormGroup,Input } from "reactstrap";
 import PhoneInput from 'react-phone-input-2'
 import { useState } from "react";
@@ -156,9 +157,12 @@ const Information =()=>{
       type="password"
     />
   </FormGroup></div>
- 
-  <button  className="btn btn-outline-secondary" onClick={notify}>Submit  <Toaster position="top-left" reverseOrder={false} />
-  </button> 
+ <div>
+
+ <button  className="  bg-button w-100"      onClick={notify}>Submit </button> 
+ <ToastContainer  position="top-left"/>
+ </div>
+
   
  
 

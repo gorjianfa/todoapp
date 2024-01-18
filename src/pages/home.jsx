@@ -1,10 +1,11 @@
 
 import { Link , useNavigate} from "react-router-dom";
 import { useForm } from "react-hook-form"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
-
-const Home =()=>{
+const Home =()=>{ const notify = () => toast("Wow so easy!");
     const navigate=useNavigate( )
     const { register, handleSubmit } = useForm()
     const onSubmit = (data) => console.log(data)
@@ -19,7 +20,10 @@ const Home =()=>{
 
 
 
-
+        <div>
+        <button onClick={notify}>Notify!</button>
+        <ToastContainer  position="top-left"/>
+      </div>
 
  
 
